@@ -16,6 +16,6 @@ jobs:
       - name: "Deploy the preview environment"
         uses: okteto/deploy-preview@latest
         with:
-          name: yashshingade-school-management-system
+          name: cicd-se-yashshingade28
           scope: personal
           timeout: 15m
