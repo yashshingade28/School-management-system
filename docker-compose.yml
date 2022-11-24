@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  django-admin:
+    image: yashshingade28/sms
+    container_name: backend
+    build:
+      context: "."
+    ports:
+      - "8000:8000"

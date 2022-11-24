@@ -1,0 +1,21 @@
+name: deploy on okteto
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy_frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Context to okteto cloud
+        uses: okteto/context@latest
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+      
+      - name: "Deploy the preview environment"
+        uses: okteto/deploy-preview@latest
+        with:
+          name: yashshingade-school-management-system
+          scope: personal
+          timeout: 15m
